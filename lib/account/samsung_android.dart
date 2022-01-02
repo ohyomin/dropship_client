@@ -18,10 +18,10 @@ class SamsungAndroid implements AccountManager {
   }
 
   @override
-  bool login() {
+  Future<bool> login() async {
     var intent = Intent(_login_action);
     intent.putExtra("client_id", "45231pynzc");
-    intent.startActivityForResult();
-    return false;
+    var result = intent.startActivityForResult().then((value) => true);
+    return result;
   }
 }

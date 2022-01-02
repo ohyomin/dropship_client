@@ -23,6 +23,6 @@ class Intent {
     return _channel
         .invokeMethod('startActivityForResult', parameters)
         //.then((data) => List<String>.from(data));
-        .then((data) => ['sdsd]']);
+        .then((data) => ['sdsd']);
   }
 }

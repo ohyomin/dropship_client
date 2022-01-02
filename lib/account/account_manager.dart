@@ -5,7 +5,7 @@ import 'package:dropship_client/account/web.dart';
 
 class AccountManager {
   bool isLogin(){ return false; }
-  bool login(){ return false; }
+  Future<bool>? login(){ return null; }
   String? getAccessToken() { return null; }
 
   factory AccountManager.create() {
@@ -37,11 +37,10 @@ class NonSamsungAndroid implements AccountManager {
   }
 
   @override
-  bool login() {
+  Future<bool>? login() {
     // TODO: implement login
     throw UnimplementedError();
   }
-
 }
 
 
@@ -59,7 +58,7 @@ class IOS implements AccountManager {
   }
 
   @override
-  bool login() {
+  Future<bool>? login() {
     // TODO: implement login
     throw UnimplementedError();
   }

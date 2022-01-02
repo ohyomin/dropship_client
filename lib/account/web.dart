@@ -21,11 +21,10 @@ class Web implements AccountManager {
   }
 
   @override
-  bool login() {
+  Future<bool> login() async {
     var grant = oauth2.AuthorizationCodeGrant(clientID, authorizationUrl, tokenEndpoint);
     var oauthUrl = grant.getAuthorizationUrl(redirectUrl, state:'aaa');
-    print("hmhm " + oauthUrl.toString());
-    launch(oauthUrl.toString());
-    return false;
+    var result = await launch(oauthUrl.toString());
+    return result;
   }
 }
