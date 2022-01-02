@@ -1,6 +1,11 @@
+import 'package:dropship_client/account/android_api.dart';
+
 import 'account_manager.dart';
 
 class SamsungAndroid implements AccountManager {
+  static const _login_action = 'com.osp.app.signin.action.ADD_SAMSUNG_ACCOUNT';
+  static const _access_action = 'com.msc.action.samsungaccount.REQUEST_ACCESSTOKEN';
+
   @override
   String? getAccessToken() {
     // TODO: implement getAccessToken
@@ -9,13 +14,14 @@ class SamsungAndroid implements AccountManager {
 
   @override
   bool isLogin() {
-    // TODO: implement isLogin
-    throw UnimplementedError();
+    return false;
   }
 
   @override
   bool login() {
-    // TODO: implement login
-    throw UnimplementedError();
+    var intent = Intent(_login_action);
+    intent.putExtra("client_id", "45231pynzc");
+    intent.startActivityForResult();
+    return false;
   }
 }

@@ -1,4 +1,4 @@
-import 'package:dropship_client/account/samsung_login.dart';
+import 'package:dropship_client/account/account_manager.dart';
 import 'package:dropship_client/view/icon_button.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                 'images/saicon.png',
                 'Login with Samsung',
                 onPressed: () {
-                  var saSignInLauncher = SASignInLauncher()
-                      ..saLogin();
+                  AccountManager.create().login();
                 },
               ),
               const SizedBox(height: 10.0),

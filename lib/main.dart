@@ -1,3 +1,4 @@
+import 'package:dropship_client/routes.dart';
 import 'package:dropship_client/view/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: Routes.routes,
       title: 'Dropship',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -45,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_)=>LoginPage()));
+                Navigator.of(context).pushNamed(Routes.login);
               },
               icon: const Icon(Icons.logout)
           )
