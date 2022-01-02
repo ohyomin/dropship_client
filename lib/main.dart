@@ -1,8 +1,10 @@
 import 'package:dropship_client/routes.dart';
 import 'package:dropship_client/view/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
